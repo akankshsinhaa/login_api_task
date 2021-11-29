@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'third_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import "package:velocity_x/velocity_x.dart";
 
@@ -37,7 +38,14 @@ class SecondScreen extends StatelessWidget {
                     primary: Colors.black,
                     shape: const StadiumBorder(),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ThiScr(),
+                      ),
+                    );
+                  },
                   child: const Text("Click Here"),
                 )
               ],
