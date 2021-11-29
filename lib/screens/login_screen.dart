@@ -92,9 +92,15 @@ class _LoginState extends State<Login> {
                 onPressed: () {
                   if (nameController.text == "" ||
                       passwordController.text == "") {
-                    invalidCred = "Invalid credentials";
+                    invalidCred = "username/password field can't be empty";
+                    setState(() {});
+                  } else if (passwordController.text.length < 8 ||
+                      nameController.text.length < 4) {
+                    invalidCred = "Invalid username/password";
                     setState(() {});
                   } else {
+                    invalidCred = "";
+                    setState(() {});
                     Navigator.push(
                       context,
                       MaterialPageRoute(
